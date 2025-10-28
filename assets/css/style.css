@@ -1,0 +1,130 @@
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 120vh;
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: 30% 70%;
+
+}
+
+.first_box {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 120vh;
+}
+
+.first_box h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+    align-self: center;
+}
+
+.dateInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dateInput label {
+
+    color: white;
+    font-size: large;
+}
+
+.dateInput input {
+    width: 90%;
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+}
+
+.dateInput input::placeholder {
+    text-align: center;
+}
+
+.taskInput label {
+    color: white;
+    font-size: large;
+
+}
+
+.taskInput textarea {
+    resize: none;
+    width: 90%;
+    border: none;
+    border-radius: 20px;
+    height: 60px;
+}
+
+.taskInput textarea::placeholder {
+    text-align: center;
+}
+
+#Add_task {
+    align-self: center;
+    height: 37px;
+    width: 90%;
+    background-color: rgb(16, 193, 16);
+    color: white;
+}
+
+.second_box {
+    background-color: rgb(14, 133, 133);
+    padding: 2%;
+
+}
+
+.navSecondBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4% 0 4%;
+}
+
+.navSecondBox h3 {
+
+    color: white;
+    font-size: x-large;
+}
+
+
+.container_card {
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+}
+
+.days {
+    grid-column: 1/8;
+    display: flex;
+    gap: 55px;
+    justify-content: start;
+    align-items: start;
+}
+
+.card {
+    padding: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items:baseline; 
+}
+
+
+
+
