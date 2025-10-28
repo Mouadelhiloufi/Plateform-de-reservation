@@ -1,12 +1,13 @@
 
 let btn = document.getElementById("Add_task")
+
 const secondBox = document.querySelector(".second_box");
 const container_card = document.querySelector(".container_card");
 let datee = document.querySelector("#inputDate")
 const textArea = document.querySelector("#taskText");
 
 
-const form= document.querySelector(".taskInput");
+const form = document.querySelector(".taskInput");
 
 
 
@@ -34,6 +35,42 @@ for (let i = 0; i < 31; i++) {
 
     container_card.innerHTML += content
 }
+
+
+btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    let inputDate = document.getElementById("inputDate").value
+    let txt_content = document.getElementById("taskText").value
+
+    let arrayOfdays =["2025-10-06","2025-10-07","2025-10-13","2025-10-14","2025-10-20","2025-10-21","2025-10-27","2025-10-28"]
+
+    arrayOfdays.forEach((items)=>{
+        if(items==`${inputDate}`){
+            Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Votre input value note valide!",
+        });
+        }
+    })
+
+
+    let regex = /^[A-Za-z0-9 "]+$/;
+    if (!regex.test(txt_content)) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Votre input value note valide!",
+        });
+
+    }
+
+
+    console.log(inputDate);
+
+
+})
+
 
 
 
