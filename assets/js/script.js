@@ -30,29 +30,29 @@ for (let i = 0; i < 31; i++) {
       
       <div class="card" id="${i + 1}">
                             
-                                <p>${i + 1}</p>
-                            </div>`
+                                <p class="P_card">${i + 1}</p>
+                            </div>
+                            
+                            `
 
     container_card.innerHTML += content
+
 }
 
 
-btn.addEventListener('click', function (e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault();
+
     let inputDate = document.getElementById("inputDate").value
     let txt_content = document.getElementById("taskText").value
-
+    let cards=document.querySelectorAll(".card");
+    console.log(cards);
     //   let inputDay = document.getElementById("inputDay").value
 
-    const dayContainer=document.getElementById(`${inputDate}`);
-    let pElement = document.createElement("p");
-    pElement.textContent=txt_content;
-    dayContainer.appendChild(pElement)
-
     
-
-    console.log(pElement);
-
+    
+    
+    
     let regex = /^[A-Za-z0-9 "]+$/;
     if (!regex.test(txt_content)) {
         Swal.fire({
@@ -60,13 +60,32 @@ btn.addEventListener('click', function (e) {
             title: "Oops...",
             text: "Votre input value note valide!",
         });
-
+        
+    }
+    else{
+    const dayContainer=document.getElementById(`${inputDate}`);
+    let pElement = document.createElement("p");
+    pElement.className="P_element"
+    pElement.textContent=txt_content;
+    dayContainer.appendChild(pElement)
     }
 
 
-    console.log(inputDate);
 
 
+
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
 })
 
 
