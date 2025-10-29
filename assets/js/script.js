@@ -24,7 +24,7 @@ let days = `
     `
 container_card.innerHTML += days;
 
-for (let i = 0; i < 31; i++) {
+for (let i = 0; i < 7; i++) {
 
     let content = `  
       
@@ -43,6 +43,7 @@ for (let i = 0; i < 31; i++) {
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
+
     let inputDate = document.getElementById("inputDate").value
     let txt_content = document.getElementById("taskText").value
     let cards=document.querySelectorAll(".card");
@@ -54,7 +55,7 @@ form.addEventListener('submit', function (e) {
     
     
     let regex = /^[A-Za-z0-9 "]+$/;
-    if (!regex.test(txt_content)) {
+    if (!regex.test(txt_content)||) {
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -63,6 +64,7 @@ form.addEventListener('submit', function (e) {
         
     }
     else{
+        
     const dayContainer=document.getElementById(`${inputDate}`);
     let pElement = document.createElement("p");
     pElement.className="P_element"
