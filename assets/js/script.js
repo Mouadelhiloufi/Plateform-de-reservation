@@ -42,18 +42,16 @@ btn.addEventListener('click', function (e) {
     let inputDate = document.getElementById("inputDate").value
     let txt_content = document.getElementById("taskText").value
 
-    let arrayOfdays =["2025-10-06","2025-10-07","2025-10-13","2025-10-14","2025-10-20","2025-10-21","2025-10-27","2025-10-28"]
+    //   let inputDay = document.getElementById("inputDay").value
 
-    arrayOfdays.forEach((items)=>{
-        if(items==`${inputDate}`){
-            Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Votre input value note valide!",
-        });
-        }
-    })
+    const dayContainer=document.getElementById(`${inputDate}`);
+    let pElement = document.createElement("p");
+    pElement.textContent=txt_content;
+    dayContainer.appendChild(pElement)
 
+    
+
+    console.log(pElement);
 
     let regex = /^[A-Za-z0-9 "]+$/;
     if (!regex.test(txt_content)) {
