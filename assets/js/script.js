@@ -28,9 +28,9 @@ for (let i = 0; i < 7; i++) {
 
     let content = `  
       
-      <div class="card" id="${i + 1}">
+      <div class="card" id="p${i + 1}">
                             
-                                <p class="P_card">${i + 1}</p>
+                                <p class="P_card${i+1}"> ${i + 1}</p>
                             </div>
                             
                             `
@@ -47,15 +47,15 @@ form.addEventListener('submit', function (e) {
     let inputDate = document.getElementById("inputDate").value
     let txt_content = document.getElementById("taskText").value
     let cards=document.querySelectorAll(".card");
-    console.log(cards);
+    
     //   let inputDay = document.getElementById("inputDay").value
 
     
+   
     
     
-    
-    let regex = /^[A-Za-z0-9 "]+$/;
-    if (!regex.test(txt_content)||) {
+    let regex = /^[A-Za-z "]+$/;
+    if (!regex.test(txt_content)||inputDate>7) {
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -63,21 +63,29 @@ form.addEventListener('submit', function (e) {
         });
         
     }
-    else{
+    else{ 
+        const containerDay=document.getElementById(`p${inputDate}`);
+        let P_card=document.createElement("p");
+        P_card.className="PCard";
+        P_card.textContent=  txt_content;
+        containerDay.appendChild(P_card);
         
-    const dayContainer=document.getElementById(`${inputDate}`);
-    let pElement = document.createElement("p");
-    pElement.className="P_element"
-    pElement.textContent=txt_content;
-    dayContainer.appendChild(pElement)
+
+        
+
+         P_card.addEventListener('click', function(e) {
+            P_card.remove(); // supprime l'élément lui-même
+        });
     }
+});
+    
+
 
 
 
 
 
 
-
     
     
     
@@ -88,7 +96,7 @@ form.addEventListener('submit', function (e) {
     
     
     
-})
+
 
 
 

@@ -15,7 +15,8 @@
     background-color: aqua;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 30px;
     height: 120vh;
 }
 
@@ -40,14 +41,14 @@
     font-size: large;
 }
 
-.dateInput input {
-    width: 90%;
+.Input input {
+    width: 100%;
     border: none;
     border-radius: 20px;
     height: 30px;
 }
 
-.dateInput input::placeholder {
+.Input input::placeholder {
     text-align: center;
 }
 
@@ -59,7 +60,7 @@
 
 .taskInput textarea {
     resize: none;
-    width: 90%;
+    width: 100%;
     border: none;
     border-radius: 20px;
     height: 60px;
@@ -70,9 +71,10 @@
 }
 
 #Add_task {
-    align-self: center;
+    margin-top: 30px;
+    
     height: 37px;
-    width: 90%;
+    width: 100%;
     background-color: rgb(16, 193, 16);
     color: white;
 }
@@ -117,20 +119,48 @@
 }
 
 .card {
-    
-    padding: 10px;
+    min-height: 100px;
+    padding-left: 10%;
+    padding-top: 24%;
     background-color: #fff;
-    overflow-y: auto;
+    
+    position: relative;
     
     
 
 }
-.P_card{
-    color: blue;
-    overflow-y: auto;
+.PCard{
+    
+    overflow-x: scroll;
+    
+    cursor: pointer;
+    
+}
+.card p{
+    width: 100%;
+}
+.P_card1,.P_card2,.P_card3,.P_card4,.P_card5{
+    color: black;
+   
+    position: absolute;
+    top: 0%;
+    left:0%;
+}
+.P_card6,.P_card7{
+    
+    position: absolute;
+    top:0%;
+    left:0%;
+    color: white;
 }
 .P_element{
     color:red;
+}
+#p6{
+    background-color: grey;
+}
+#p7{
+    background-color: grey;
 }
 
 
