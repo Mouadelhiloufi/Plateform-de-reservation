@@ -5,6 +5,7 @@ const secondBox = document.querySelector(".second_box");
 const container_card = document.querySelector(".container_card");
 let datee = document.querySelector("#inputDate")
 const textArea = document.querySelector("#taskText");
+let options = document.getElementById("select");
 
 
 const form = document.querySelector(".taskInput");
@@ -55,7 +56,7 @@ form.addEventListener('submit', function (e) {
     
     
     let regex = /^[A-Za-z "]+$/;
-    if (!regex.test(txt_content)||inputDate>7) {
+    if (!regex.test(txt_content)||inputDate>5) {
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -67,15 +68,40 @@ form.addEventListener('submit', function (e) {
         const containerDay=document.getElementById(`p${inputDate}`);
         let P_card=document.createElement("p");
         P_card.className="PCard";
-        P_card.textContent=  txt_content;
-        containerDay.appendChild(P_card);
+        let icon=document.createElement("i");
         
+        // icon.classList="fas fa-font-awesome"
+        // P_card.appendChild("icon")
+        // P_card.textContent=  txt_content;
+        // containerDay.appendChild(P_card);
+        console.log(options)
+        if (options.value==="VIP"){
+            console.log(options.value);
+              P_card.style.backgroundColor="red";
+        }
+        else if(options.value==="Aniversaire"){
+             console.log(options);
+            P_card.style.backgroundColor="green";
 
-        
+        }
+        else if(options.value==="Standard"){
+            P_card.style.backgroundColor="blue";
+            console.log(options)
+        }
+
+        else if(options.value==="Group"){
+            P_card.style.backgroundColor="gold";
+            console.log(options)
+        }
+
+
 
          P_card.addEventListener('click', function(e) {
-            P_card.remove(); // supprime l'élément lui-même
+            P_card.remove(); // supprime l element
         });
+        form.reset();
+
+
     }
 });
     
