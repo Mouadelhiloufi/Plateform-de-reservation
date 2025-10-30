@@ -1,10 +1,16 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-.container {
-  margin: 0;
 
+body {
+  
+  background-color: #f0f0f0;
+}
+
+.container {
+  position: relative;
   width: 100%;
   height: 100vh;
 }
@@ -13,122 +19,116 @@
   display: grid;
   grid-template-columns: 30% 70%;
   height: 100vh;
-  position: sticky;
 }
 
+/* ===== FIRST BOX (Form) ===== */
 .first_box {
-  padding: 30px;
-  background-color: aqua;
+  padding: 20px;
+  background-color: #4f46e5;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 40px;
+  gap: 20px;
+  overflow-y: auto;
 }
 
 .first_box h3 {
+  font-size: 18px;
+  color: white;
+
+}
+
+.Input {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  font-size: 25px;
-  color: white;
-  align-self: center;
-}
-
-.dateInput {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.dateInput label {
-  color: white;
-  font-size: large;
-}
-#inputDate {
-  padding: 10px;
-}
-
-.Input input {
+  gap: 8px;
   width: 100%;
-  border: none;
-  border-radius: 20px;
-  height: 30px;
 }
 
-.Input input::placeholder {
-  text-align: center;
-}
-
-.taskInput label {
+.Input label {
   color: white;
-  font-size: large;
+  font-size: 14px;
+
 }
 
-.taskInput textarea {
+.Input input,
+.Input textarea,
+.Input select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 10px;
+  
+}
+
+.Input textarea {
   resize: none;
-  width: 100%;
-  border: none;
-  border-radius: 20px;
-  height: 60px;
+  min-height: 80px;
 }
 
-.taskInput textarea::placeholder {
-  text-align: center;
+.buttons {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
 }
-#taskText {
+
+.buttons button {
+  
   padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  
+  cursor: pointer;
+  color: white;
 }
 
 #Add_task {
-  margin-top: 30px;
-  padding: 10px;
-  border-radius: 20px;
-
-  height: 37px;
-  width: 100%;
-  background-color: rgb(16, 193, 16);
-  color: white;
+  background-color: aqua;
 }
 
+#Add_task:hover {
+  background-color: rgb(21, 199, 199);
+}
+
+#modifier {
+  background-color: rgb(49, 235, 49);
+}
+
+#modifier:hover {
+  background-color: rgb(46, 167, 46);
+}
+
+/* ===== SECOND BOX (Calendar) ===== */
 .second_box {
-  background-color: rgb(14, 133, 133);
+  background-color: #f0f0f0;
   padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
+  overflow-y: auto;
 }
 
 .navSecondBox {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 4% 0 4%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid white;
 }
 
 .navSecondBox h3 {
-  color: white;
-  font-size: x-large;
+  color: rgb(28, 28, 28);
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .container_card {
-  /* background-color: red; */
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  justify-content: center;
-  /* align-items: center; */
-  width: 100%;
-  padding: 10px;
   gap: 10px;
-}
-
-#select {
-  display: flex;
-  flex-direction: column;
-  border: none;
-  border-radius: 20px;
-  width: 100%;
-  height: 37px;
-  padding: 10px 0px 0px 10px;
 }
 
 .days {
@@ -136,33 +136,35 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 10px;
-  width: 100%;
-}
-
-.card {
-  min-height: 100px;
-  padding-left: 10%;
-  padding-top: 24%;
-  background-color: #fff;
-  position: relative;
-  /* Add fixed width and overflow handling to prevent expansion */
-  width: 100%;
-  overflow: hidden;
-}
-
-.PCard {
-  /* Changed from overflow-x: scroll to word-wrap and text truncation */
-  word-wrap: break-word;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-  cursor: pointer;
-  max-width: 100%;
   margin-bottom: 10px;
 }
 
-.card p {
-  width: 100%;
+.days p {
+  text-align: center;
+  
+  color: rgb(28, 28, 28);
+  padding: 10px;
+  font-size: 13px;
+}
+
+#p1,#p2,#p3,#p4,#p5 {
+  min-height: 120px;
+  background-color: grey;
+  border-radius: 8px;
+  padding: 10px;
+  position: relative;
+  border: 1px solid #ddd;
+  overflow-y: auto;
+}
+#p6,#p7{
+    min-height: 120px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  position: relative;
+  border: 1px solid #ddd;
+  overflow-y: auto;
+
 }
 
 .P_card1,
@@ -170,25 +172,96 @@
 .P_card3,
 .P_card4,
 .P_card5 {
-  color: black;
-
+  color: rgb(28, 28, 28);
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 5px;
+  left: 5px;
+  
+  font-size: 12px;
+  background-color: grey;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 .P_card6,
-.P_card7 {
+.P_card7{
+     color: rgb(28, 28, 28);
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 5px;
+  left: 5px;
+  
+  font-size: 12px;
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+
+}
+
+.div_style {
+  width: 100%;
+  height: auto;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.PCard {
+  
+  overflow-x: scroll;
+  
+  
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.pHour {
   color: white;
+  font-size: 12px;
+  
+  margin-bottom: 6px;
 }
-.P_element {
-  color: red;
+
+
+.popUp {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
 }
-#p6 {
-  background-color: grey;
-}
-#p7 {
-  background-color: grey;
+
+
+
+
+
+
+
+
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .first_box {
+    padding: 20px;
+  }
+
+  .second_box {
+    padding: 20px;
+  }
+
+  .popUp-content {
+    width: 55%;
+    padding: 20px;
+  }
 }

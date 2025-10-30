@@ -30,7 +30,7 @@ for (let i = 0; i < 7; i++) {
     let content = `  
       
       <div class="card" id="p${i + 1}">
-                            
+                        
                                 <p class="P_card${i+1}"> ${i + 1}</p>
                             </div>
                             
@@ -48,6 +48,7 @@ form.addEventListener('submit', function (e) {
     let inputDate = document.getElementById("inputDate").value
     let txt_content = document.getElementById("taskText").value
     let cards=document.querySelectorAll(".card");
+    let heure = document.getElementById("hour").value;
     
     //   let inputDay = document.getElementById("inputDay").value
 
@@ -56,49 +57,76 @@ form.addEventListener('submit', function (e) {
     
     
     let regex = /^[A-Za-z "]+$/;
+    let regex_hour = /^[0-9HhrR"]+$/;
     if (!regex.test(txt_content)||inputDate>5) {
         Swal.fire({
             icon: "error",
             title: "Oops...",
             text: "Votre input value note valide!",
         });
+
         
-    }
-    else{ 
+        
+    }else if (!regex_hour.test(heure)){
+            Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Votre input value note valide!",
+        });
+            
+        }else { 
+        
+        
         const containerDay=document.getElementById(`p${inputDate}`);
         let P_card=document.createElement("p");
+        let dev=document.createElement("div");
+        dev.className="div_style"
+        
         P_card.className="PCard";
-        let icon=document.createElement("i");
+        // let icon=document.createElement("i");
         
         // icon.classList="fas fa-font-awesome"
         // P_card.appendChild("icon")
-        // P_card.textContent=  txt_content;
-        // containerDay.appendChild(P_card);
-        console.log(options)
+        P_card.textContent=  txt_content;
+        
+        let p_hour=document.createElement("p")
+        p_hour.textContent = heure;
+        p_hour.className="pHour";
+        containerDay.appendChild(dev)
+        dev.appendChild(p_hour);
+         dev.appendChild(P_card);
+
+
+        
         if (options.value==="VIP"){
             console.log(options.value);
-              P_card.style.backgroundColor="red";
+              dev.style.backgroundColor="red";
+              
         }
         else if(options.value==="Aniversaire"){
-             console.log(options);
-            P_card.style.backgroundColor="green";
+             
+            dev.style.backgroundColor="green";
 
         }
         else if(options.value==="Standard"){
-            P_card.style.backgroundColor="blue";
-            console.log(options)
-        }
+            dev.style.backgroundColor="blue";
+                    }
 
         else if(options.value==="Group"){
-            P_card.style.backgroundColor="gold";
-            console.log(options)
-        }
+            dev.style.backgroundColor="yellow";
+                    }
 
 
 
-         P_card.addEventListener('click', function(e) {
-            P_card.remove(); // supprime l element
+         dev.addEventListener('click', function(e) {
+            dev.remove();
+             // supprime l element
         });
+        
+
+
+
+
         form.reset();
 
 

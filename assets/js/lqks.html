@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+  <div class="PCard">Do homework</div>
+  <div class="PCard">Go to gym</div>
+  <div class="PCard">Buy groceries</div>
+</div>
+
+
+<script>
+
+
+
+  const container = document.querySelector(".container");
+
+container.addEventListener("click", function(e) {
+  // Check that the user clicked on a task card
+
+  console.log(e.target.classList)
+  if (e.target.classList.contains("PCard")) {
+    // Ask the user for new text
+    let newText = prompt("Enter the new text for this task:", e.target.textContent);
+
+    // If the user entered something, update the card
+    if (newText !== null && newText.trim() !== "") {
+      e.target.textContent = newText;
+    }
+  }
+});
+
+</script>
+</body>
+</html>
