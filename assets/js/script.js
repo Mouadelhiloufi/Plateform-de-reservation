@@ -8,7 +8,11 @@ const textArea = document.querySelector("#taskText");
 let options = document.getElementById("select");
 let popUp = document.querySelector(".popUp");
 const formModif= document.getElementById("formPop");
-let dateModif = document.querySelector("#inputDateM").value
+let dateModif = document.querySelector("#inputDateM")
+let tasktxtM = document.querySelector("#taskTextM")
+let selectM = document.querySelector("#selectM")
+let hourM = document.querySelector("#hourM")
+
 
 
 const form = document.querySelector(".taskInput");
@@ -43,6 +47,8 @@ for (let i = 0; i < 7; i++) {
     container_card.innerHTML += content
 
 }
+
+
 
 
 btn.addEventListener('click', function (e) {
@@ -84,15 +90,21 @@ btn.addEventListener('click', function (e) {
         const containerDay = document.getElementById(`p${inputDate}`);
         let P_card = document.createElement("p");
         let dev = document.createElement("div");
+
         dev.className = "div_style"
+        
        let btnmodif = document.createElement("button");
+       
         P_card.className = "PCard";
         // let icon=document.createElement("i");
 
         // icon.classList="fas fa-font-awesome"
         // P_card.appendChild("icon")
         P_card.textContent = txt_content;
+        btnmodif.className ="modif";
         btnmodif.textContent = "modifier";
+        
+        
 
         let p_hour = document.createElement("p")
         p_hour.textContent = heure;
@@ -106,13 +118,14 @@ btn.addEventListener('click', function (e) {
 
 
         if (options.value === "VIP") {
-            console.log(options.value);
+          
             dev.style.backgroundColor = "red";
 
         }
         else if (options.value === "Aniversaire") {
 
             dev.style.backgroundColor = "green";
+            
 
         }
         else if (options.value === "Standard") {
@@ -133,13 +146,22 @@ btn.addEventListener('click', function (e) {
         btnmodif.addEventListener('click',function(e){
           
             popUp.style.display="flex";
+            formModif.addEventListener('submit',function(e){
+                
+                console.log(dateModif)
+                    dateModif=inputDate;
+                    tasktxtM=txt_content;
+                    hourM=heure;
+                    console.log(inputDate)
+
+                
+
+
+
+            });
 
             
-            
-            
-
-
-        });
+            });
 
 
 
@@ -171,7 +193,7 @@ btn.addEventListener('click', function (e) {
 
 
 
-
+container_card
 
 
 
