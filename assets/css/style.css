@@ -5,7 +5,7 @@
 }
 
 body {
-  
+
   background-color: #f0f0f0;
 }
 
@@ -21,7 +21,7 @@ body {
   height: 100vh;
 }
 
-/* ===== FIRST BOX (Form) ===== */
+
 .first_box {
   padding: 20px;
   background-color: #4f46e5;
@@ -57,7 +57,7 @@ body {
   border: none;
   border-radius: 5px;
   font-size: 10px;
-  
+
 }
 
 .Input textarea {
@@ -73,17 +73,19 @@ body {
 }
 
 .buttons button {
-  
+
   padding: 10px;
   border: none;
   border-radius: 5px;
   font-size: 14px;
-  
+
   cursor: pointer;
   color: white;
 }
 
 #Add_task {
+  
+  width: 100%;
   background-color: aqua;
 }
 
@@ -99,7 +101,7 @@ body {
   background-color: rgb(46, 167, 46);
 }
 
-/* ===== SECOND BOX (Calendar) ===== */
+
 .second_box {
   background-color: #f0f0f0;
   padding: 30px;
@@ -141,13 +143,17 @@ body {
 
 .days p {
   text-align: center;
-  
+
   color: rgb(28, 28, 28);
   padding: 10px;
   font-size: 13px;
 }
 
-#p1,#p2,#p3,#p4,#p5 {
+#p1,
+#p2,
+#p3,
+#p4,
+#p5 {
   min-height: 120px;
   background-color: grey;
   border-radius: 8px;
@@ -156,8 +162,10 @@ body {
   border: 1px solid #ddd;
   overflow-y: auto;
 }
-#p6,#p7{
-    min-height: 120px;
+
+#p6,
+#p7 {
+  min-height: 120px;
   background-color: white;
   border-radius: 8px;
   padding: 10px;
@@ -176,19 +184,20 @@ body {
   position: absolute;
   top: 5px;
   left: 5px;
-  
+
   font-size: 12px;
   background-color: grey;
   padding: 4px 8px;
   border-radius: 4px;
 }
+
 .P_card6,
-.P_card7{
-     color: rgb(28, 28, 28);
+.P_card7 {
+  color: rgb(28, 28, 28);
   position: absolute;
   top: 5px;
   left: 5px;
-  
+
   font-size: 12px;
   background-color: white;
   padding: 4px 8px;
@@ -206,10 +215,11 @@ body {
 }
 
 .PCard {
-  
-  overflow-x: scroll;
-  
-  
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+
   cursor: pointer;
   width: 100%;
   margin-bottom: 6px;
@@ -219,7 +229,7 @@ body {
 .pHour {
   color: white;
   font-size: 12px;
-  
+
   margin-bottom: 6px;
 }
 
@@ -229,12 +239,48 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 30%;
+  height: 100vh;
+  background-color: aqua;
   z-index: 1;
+
   align-items: center;
-  justify-content: center;
+  align-content: center;
+}
+
+.popUp form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popUp label {
+  color: rgb(95, 94, 94);
+  font-size: 14px;
+}
+
+.popUp input,
+.popUp textarea,
+.popUp select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d8d7d7;
+  border-radius: 5px;
+  
+}
+
+.popUp button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4139d8;
+  color: white;
+  cursor: pointer;
+}
+
+.popUp button:hover {
+  background-color: #3b36c9;
 }
 
 
@@ -246,7 +292,7 @@ body {
 
 
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
   .boxes {
     grid-template-columns: 1fr;
@@ -260,8 +306,44 @@ body {
     padding: 20px;
   }
 
-  .popUp-content {
-    width: 55%;
-    padding: 20px;
+  .popUp {
+     /* display: none;  */
+    position: fixed;
+    width: 100%;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+  
+    
   }
+  .popUp button {
+  margin-top: 5px;
+  padding: 5px;
+  
+}
+.popUp label {
+  
+  font-size: 8px;
+}
+.popUp button {
+  margin-top: 5px;
+  padding: 5px;
+  border: none;
+  
+}
+
+  /* .popUp {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100vh;
+  background-color: aqua;
+  z-index: 1;
+
+  align-items: center;
+  align-content: center;
+} */
+
 }
