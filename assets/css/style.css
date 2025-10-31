@@ -233,7 +233,10 @@ body {
   margin-bottom: 6px;
 }
 
-
+.title{
+  display: flex;
+  align-self: center;
+}
 .popUp {
   display: none;
   position: fixed;
@@ -245,10 +248,11 @@ body {
   z-index: 1;
 
   align-items: center;
-  align-content: center;
+  justify-content: center;
 }
 
 .popUp form {
+  
   display: flex;
   flex-direction: column;
   gap: 15px;

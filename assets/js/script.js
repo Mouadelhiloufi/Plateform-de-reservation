@@ -3,15 +3,16 @@ let btn = document.getElementById("Add_task")
 
 const secondBox = document.querySelector(".second_box");
 const container_card = document.querySelector(".container_card");
-let datee = document.querySelector("#inputDate")
-const textArea = document.querySelector("#taskText");
+let datee = document.getElementById("inputDate")
+const textArea = document.getElementById("taskText");
 let options = document.getElementById("select");
 let popUp = document.querySelector(".popUp");
-const formModif= document.getElementById("formPop");
-let dateModif = document.querySelector("#inputDateM")
-let tasktxtM = document.querySelector("#taskTextM")
-let selectM = document.querySelector("#selectM")
-let hourM = document.querySelector("#hourM")
+const formModif = document.getElementById("formPop");
+
+let tasktxtM = document.getElementById("taskTextM")
+
+let hourM = document.getElementById("hourM")
+
 
 
 
@@ -57,7 +58,7 @@ btn.addEventListener('click', function (e) {
 
     let inputDate = document.getElementById("inputDate").value
     let txt_content = document.getElementById("taskText").value
-    let cards = document.querySelectorAll(".card");
+    // let cards = document.querySelectorAll(".card");
     let heure = document.getElementById("hour").value;
 
     //   let inputDay = document.getElementById("inputDay").value
@@ -92,19 +93,19 @@ btn.addEventListener('click', function (e) {
         let dev = document.createElement("div");
 
         dev.className = "div_style"
-        
-       let btnmodif = document.createElement("button");
-       
+
+        let btnmodif = document.createElement("button");
+
         P_card.className = "PCard";
         // let icon=document.createElement("i");
 
         // icon.classList="fas fa-font-awesome"
         // P_card.appendChild("icon")
         P_card.textContent = txt_content;
-        btnmodif.className ="modif";
+        btnmodif.className = "modif";
         btnmodif.textContent = "modifier";
-        
-        
+
+
 
         let p_hour = document.createElement("p")
         p_hour.textContent = heure;
@@ -113,19 +114,19 @@ btn.addEventListener('click', function (e) {
         dev.appendChild(p_hour);
         dev.appendChild(P_card);
         dev.appendChild(btnmodif);
-        
+
 
 
 
         if (options.value === "VIP") {
-          
+
             dev.style.backgroundColor = "red";
 
         }
         else if (options.value === "Aniversaire") {
 
             dev.style.backgroundColor = "green";
-            
+
 
         }
         else if (options.value === "Standard") {
@@ -139,29 +140,33 @@ btn.addEventListener('click', function (e) {
 
 
         dev.addEventListener('dblclick', function (e) {
-            
+
             e.currentTarget.remove(); // supprimer l element
-            popUp.style.display="none";
+            popUp.style.display = "none";
         });
-        btnmodif.addEventListener('click',function(e){
-          
-            popUp.style.display="flex";
-            formModif.addEventListener('submit',function(e){
-                
-                console.log(dateModif)
-                    dateModif=inputDate;
-                    tasktxtM=txt_content;
-                    hourM=heure;
-                    console.log(inputDate)
-
-                
 
 
 
-            });
+        btnmodif.addEventListener("click", function (e) {
+            e.preventDefault();
+            const editDiv = e.target.parentElement;
 
             
-            });
+            hourM.value = editDiv.querySelector(".pHour").textContent;
+            tasktxtM.value = editDiv.querySelector(".PCard").textContent;
+
+            popUp.style.display = "flex";
+
+            
+            formModif.onsubmit = function (event) {
+                event.preventDefault();
+                editDiv.querySelector(".pHour").textContent = hourM.value;
+                editDiv.querySelector(".PCard").textContent = tasktxtM.value;
+
+
+                popUp.style.display = "none";
+            };
+        });
 
 
 
@@ -175,7 +180,8 @@ btn.addEventListener('click', function (e) {
 
 
 
-        form.reset();
+
+form.reset();
 
 
     }
