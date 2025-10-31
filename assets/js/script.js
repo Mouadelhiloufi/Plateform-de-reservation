@@ -103,7 +103,7 @@ btn.addEventListener('click', function (e) {
         // P_card.appendChild("icon")
         P_card.textContent = txt_content;
         btnmodif.className = "modif";
-        btnmodif.textContent = "modifier";
+        btnmodif.textContent = "modif";
 
 
 

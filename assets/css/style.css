@@ -5,8 +5,8 @@
 }
 
 body {
-
-  background-color: #f0f0f0;
+  /* Updated background color to modern light gray */
+  background-color: #f8fafc;
 }
 
 .container {
@@ -21,10 +21,10 @@ body {
   height: 100vh;
 }
 
-
 .first_box {
   padding: 20px;
-  background-color: #4f46e5;
+  /* Updated primary sidebar color to modern teal */
+  background-color: #0f766e;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -34,7 +34,6 @@ body {
 .first_box h3 {
   font-size: 18px;
   color: white;
-
 }
 
 .Input {
@@ -47,7 +46,6 @@ body {
 .Input label {
   color: white;
   font-size: 14px;
-
 }
 
 .Input input,
@@ -57,7 +55,6 @@ body {
   border: none;
   border-radius: 5px;
   font-size: 10px;
-
 }
 
 .Input textarea {
@@ -73,37 +70,36 @@ body {
 }
 
 .buttons button {
-
   padding: 10px;
   border: none;
   border-radius: 5px;
   font-size: 14px;
-
   cursor: pointer;
   color: white;
 }
 
 #Add_task {
-  
+  /* Updated add button to modern emerald green */
   width: 100%;
-  background-color: aqua;
+  background-color: #10b981;
 }
 
 #Add_task:hover {
-  background-color: rgb(21, 199, 199);
+  background-color: #059669;
 }
 
 #modifier {
-  background-color: rgb(49, 235, 49);
+  /* Updated modify button to modern blue */
+  background-color: #0ea5e9;
 }
 
 #modifier:hover {
-  background-color: rgb(46, 167, 46);
+  background-color: #0284c7;
 }
 
-
 .second_box {
-  background-color: #f0f0f0;
+  /* Updated secondary background to clean white */
+  background-color: #ffffff;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -116,13 +112,14 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: white;
+  /* Updated nav background to light gray */
+  background-color: #f1f5f9;
   border-radius: 8px;
-  border: 1px solid white;
+  border: 1px solid #e2e8f0;
 }
 
 .navSecondBox h3 {
-  color: rgb(28, 28, 28);
+  color: #1e293b;
   font-size: 20px;
   font-weight: bold;
 }
@@ -143,8 +140,7 @@ body {
 
 .days p {
   text-align: center;
-
-  color: rgb(28, 28, 28);
+  color: #475569;
   padding: 10px;
   font-size: 13px;
 }
@@ -154,25 +150,26 @@ body {
 #p3,
 #p4,
 #p5 {
+  /* Updated weekday boxes to light teal background */
   min-height: 120px;
-  background-color: grey;
+  background-color: #f0fdfa;
   border-radius: 8px;
   padding: 10px;
   position: relative;
-  border: 1px solid #ddd;
+  border: 1px solid #ccfbf1;
   overflow-y: auto;
 }
 
 #p6,
 #p7 {
+  /* Updated weekend boxes to light gray */
   min-height: 120px;
-  background-color: white;
+  background-color: #f8fafc;
   border-radius: 8px;
   padding: 10px;
   position: relative;
-  border: 1px solid #ddd;
+  border: 1px solid #e2e8f0;
   overflow-y: auto;
-
 }
 
 .P_card1,
@@ -180,29 +177,28 @@ body {
 .P_card3,
 .P_card4,
 .P_card5 {
-  color: rgb(28, 28, 28);
+  /* Updated weekday card labels to teal accent */
+  color: #0f766e;
   position: absolute;
   top: 5px;
   left: 5px;
-
   font-size: 12px;
-  background-color: grey;
+  background-color: #d1fae5;
   padding: 4px 8px;
   border-radius: 4px;
 }
 
 .P_card6,
 .P_card7 {
-  color: rgb(28, 28, 28);
+  /* Updated weekend card labels to gray accent */
+  color: #475569;
   position: absolute;
   top: 5px;
   left: 5px;
-
   font-size: 12px;
-  background-color: white;
+  background-color: #e2e8f0;
   padding: 4px 8px;
   border-radius: 4px;
-
 }
 
 .div_style {
@@ -217,9 +213,6 @@ body {
 .PCard {
   overflow-x: hidden;
   text-overflow: ellipsis;
-  /* white-space: nowrap; */
-
-
   cursor: pointer;
   width: 100%;
   margin-bottom: 6px;
@@ -229,14 +222,20 @@ body {
 .pHour {
   color: white;
   font-size: 12px;
-
   margin-bottom: 6px;
 }
 
-.title{
+.title {
   display: flex;
   align-self: center;
 }
+
+.title h3 {
+  /* Updated title color to modern teal */
+  font-size: 30px;
+  color: #0f766e;
+}
+
 .popUp {
   display: none;
   position: fixed;
@@ -244,22 +243,22 @@ body {
   left: 0;
   width: 30%;
   height: 100vh;
-  background-color: aqua;
+  /* Updated popup background to clean white */
+  background-color: #ffffff;
   z-index: 1;
-
   align-items: center;
   justify-content: center;
 }
 
 .popUp form {
-  
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
 .popUp label {
-  color: rgb(95, 94, 94);
+  /* Updated label color to dark slate */
+  color: #334155;
   font-size: 14px;
 }
 
@@ -268,9 +267,9 @@ body {
 .popUp select {
   width: 100%;
   padding: 8px;
-  border: 1px solid #d8d7d7;
+  /* Updated input border to light gray */
+  border: 1px solid #cbd5e1;
   border-radius: 5px;
-  
 }
 
 .popUp button {
@@ -278,35 +277,28 @@ body {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #4139d8;
+  /* Updated popup button to modern teal */
+  background-color: #0f766e;
   color: white;
   cursor: pointer;
 }
 
 .popUp button:hover {
-  background-color: #3b36c9;
+  background-color: #0d5f5a;
 }
-.modif{
-  background-color: white;
-  border: none;
+
+.modif {
+  /* Updated modify button background to slate gray */
+  background-color: #64748b;
+  border: 1px solid #475569;
   border-radius: 20px;
   width: 100%;
   cursor: pointer;
 }
-.modif:hover{
-  background-color: #4f46e5;;
+
+.modif:hover {
+  background-color: #475569;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 768px) {
   .boxes {
@@ -322,43 +314,25 @@ body {
   }
 
   .popUp {
-     /* display: none;  */
     position: fixed;
     width: 100%;
     height: 60vh;
     align-items: center;
     justify-content: center;
-  
-    
   }
+
   .popUp button {
-  margin-top: 5px;
-  padding: 5px;
-  
-}
-.popUp label {
-  
-  font-size: 8px;
-}
-.popUp button {
-  margin-top: 5px;
-  padding: 5px;
-  border: none;
-  
-}
+    margin-top: 5px;
+    padding: 5px;
+  }
 
-  /* .popUp {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30%;
-  height: 100vh;
-  background-color: aqua;
-  z-index: 1;
+  .popUp label {
+    font-size: 8px;
+  }
 
-  align-items: center;
-  align-content: center;
-} */
-
+  .popUp button {
+    margin-top: 5px;
+    padding: 5px;
+    border: none;
+  }
 }
